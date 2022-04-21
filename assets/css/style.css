@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Nova Square', cursive;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: #303030;
+}
+
+.bitContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 13em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.modeTittle {
+    font-size: 2em;
+    margin: 1em 0;
+}
+
+.tittleInst {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+#highscoresContainer {
+    width: 100%;
+}
+
+#generalContainer {
+    width: 100%;
+}
+
+.color1 {
+    background-color: #435b74;
+    border: 1px solid #376ea5;
+}
+
+.color2 {
+    background-color: #22c969;
+    border: 1px solid #1da859;
+}
+
+.color3 {
+    background-color: #d77427;
+    border: 1px solid #e97217;
+}
+
+.color4 {
+    background-color: #f22432;
+    border: 1px solid #e91717;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    outline: none;
+    text-decoration: none;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.btn-resolve {
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    width: 50%;
+    margin-bottom: 0.5em;
+}
+
+.btn-big-width {
+    width: 80%;
+}
+
+.btn-width {
+    width: 25%;
+}
+
+.btn-width-quest {
+    width: 12em;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn:hover, .btn-resolve:hover {
+    cursor: pointer;
+    transition: 150ms;
+    transform: scale(1.03);
+}
+
+#next-btn, #end-btn {
+    font-weight: bold;
+}
+
+.pBut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.correct{
+    background: #155724;
+    border: 1px solid #f5c6cb;
+}
+
+.incorrect{
+    background: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#classicMode, #timeTrialMode, #highscores {
+    display: flex;
+    align-items: center;
+}
+
+.p-classic {
+    text-align: center;
+    line-height: 1.8em;
+    margin: 0 0 1em 0;
+}
+
+.p-timetrial {
+    text-align: center;
+    line-height: 1.8em;
+    margin: 0;
+    margin: 0 0 1em 0;
+}
+
+#highscoresList {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+
+.highscoresTittle {
+    font-size: 2em;
+}
+
+.high-score {
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
+}
+
+.high-score:hover {
+    transform: scale(1.025);
+}
+
+.imgIcon {
+    height: 1em;
+    padding: 0 0.3em;
+}
+
+#question {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#playerSelection {
+    width: 100%;
+}
+
+.containerPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+    margin-bottom: 2%;
+    background-color: #010e14;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+#questionContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.hud-main-text {
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0.4em 0;
+}
+
+#progressBar {
+    width: 80%;
+    height: 25%;
+    border: 0.1em solid rgb(11, 223, 36);
+    border-radius: 50px;
+    margin-top: 1em;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background-color: rgb(11, 223, 36);
+    width: 0%;
+}
+
+.mb1 {
+    margin-bottom: 2em;
+}
+
+/* End Page CSS */
+#end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.end-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    text-align: center;
+    margin-bottom: 0.5em;
+    width: 20em;
+    padding: 0.8em;
+    font-size: 1.5em;
+    border: 0.1em solid #d5b92e;
+    border-radius: 0.5em;
+}
+
+#username {
+    margin-bottom: 1.5em;
+    width: 100%;
+    outline: none;
+}
+
+#end-text {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.bitContainer {
+    padding: 0.5em 0.5em 0 0.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bitImg {
+    width: 2%;
+    margin-right: 0.5em;
+}
+
+#usd-amount {
+    color: white;
+    font-size: 0.9em;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+@media only screen and (min-width:719px) and (max-width:851px) {
+    #question {
+        font-size: 1.2em;
+    }
+
+    .hud-prefix {
+        font-size: 1em;
+    }
+
+    .hud-main-text {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        font-size: 1.2em;
+    }
+
+    .btn-resolve {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 428px) and (max-width:719px) {
+    .logo {
+        width: 10em;
+    }
+
+    #usd-amount {
+        font-size: 0.7em;
+    }
+
+    .modeTittle {
+        font-size: 1.5em;
+    }
+
+    .highscoresTittle {
+        font-size: 1.5em;
+    }
+
+    .high-score {
+        font-size: 1em;
+    }
+
+    .tittleInst {
+        font-size: 1.5em;
+    }
+
+    .btn-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #question {
+        font-size: 1.2em;
+    }
+
+    .hud-prefix {
+        font-size: 1em;
+    }
+
+    .hud-main-text {
+        font-size: 1.5em;
+    }
+
+    #progressBar {
+        width: 9em;
+    }
+
+    .btn-width-quest {
+        width: 10em;
+    }
+
+    #next-btn, #end-btn {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        font-size: 1.2em;
+        margin-bottom: 0.8em;
+    }
+
+    .btn-resolve {
+        width: 40%;
+    }
+
+    #end-text {
+        font-size: 1.2em;
+    }
+
+    #username {
+        width: 80%;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    #usd-amount {
+        font-size: 0.5em;
+    }
+
+    .modeTittle, .tittleInst, .highscoresTittle {
+        font-size: 1.2em;
+    }
+
+    #question {
+        font-size: 1.2em;
+    }
+
+    .hud-prefix, .hud-main-text {
+        font-size: 0.8em;
+    }
+
+    #next-btn, #end-btn {
+        font-size: 1em;
+    }
+
+    .pBut {
+        font-size: 0.8em;
+    }
+
+    .btn, .high-score {
+        font-size: 1em;
+    }
+    
+    .btn-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #end-text {
+        font-size: 1em;
+    }
+
+    #username {
+        width: 80%;
+        font-size: 1em;
+    }
+}

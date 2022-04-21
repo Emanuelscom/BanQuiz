@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/jpg" href="#">
+</head>
+
+<body id="body">
+    <!-- BitCoin -->
+    <div class="bitContainer">
+        <img class="bitImg" src="assets/img/bitcoin.png" alt="BitCoin">
+        <div id="usd-amount"></div>
+    </div>
+
+    <!-- Logo -->
+        <img src="assets/img/logo.png" id="logo" class="logo" alt="logo">
+
+    <!-- contenedor general -->
+    <div id="home" class="container">
+
+        <!-- Inicio / Seleccion de modo de juego -->
+        <div id="playerSelection" class="flex-column flex-center">
+            <h1 class="modeTittle text-center">Elige el modo de juego:</h1>
+            <button id="classicMode" class="btn color1 btn-big-width"><img class="imgIcon" src="assets/img/clasico.png" alt="clasico">Modo Clásico</button>
+            <button id="timeTrialMode" class="btn color1 btn-big-width"><img class="imgIcon" src="assets/img/contrarreloj.png" alt="contrarreloj">Modo Contrarreloj</button>
+            <button id="highscores" class="btn color3 btn-big-width"><img class="imgIcon" src="assets/img/highscores.png" alt="highscores">Mejores Puntuaciones</button>
+        </div>
+
+        <!-- Highscores -->
+        <div id="highscoresContainer" class="hide flex-column flex-center">
+            <h2 class="highscoresTittle">Mejores Puntuaciones:</h2>
+            <ul id="highscoresList"></ul>
+            <button id="homeBtn" class="btn color4 text-center">Volver</button>
+        </div>
+
+        <!-- instrucciones modo clasico -->
+        <div id="modeContainer1" class="hide flex-column flex-center">
+            <h2 class="tittleInst text-center">Instrucciones:</h2>
+
+        <div class="pBut">
+            <p class="p-classic">En el modo Clásico tendrás que responder 10 preguntas las cuales cada una tiene 4 respuestas posibles (una correcta), si la respuesta es correcta sumaras 100 puntos, al contrario, no sumaras ninguno. <br>
+            En este modo de juego no tienes tiempo límite.</p>
+            
+            <button id="classic" class="btn color2 btn-width text-center">Jugar</button>
+        </div>
+
+            <button id="back1" class="btn color4 btn-width text-center">Volver</button>
+        </div>
+
+        <!-- instrucciones modo contrarreloj -->
+        <div id="modeContainer2" class="hide flex-column flex-center">
+            <h2 class="tittleInst text-center">Instrucciones:</h2>
+
+        <div class="pBut">
+            <p class="p-timetrial">En el modo Contrarreloj tendrás 2 minutos para responder la mayor cantidad de preguntas posibles. Cada pregunta tiene 4 respuestas posibles (una correcta), si la respuesta es correcta sumaras 100 puntos, al contrario, no sumaras ninguno.
+            </p>
+            
+            <button id="timeTrial" class="btn color2 btn-width text-center">Jugar</button>
+        </div>
+
+
+            <button id="back2" class="btn color4 btn-width text-center">Volver</button>
+        </div>
+
+        <!-- Juego -->
+        <div id="generalContainer" class="hide">
+            <div id="game">
+                <div id="hud">
+                    <div class="hud-item">
+                        <p id="progressText" class="hud-prefix">Pregunta</p>
+                        <div id="progressBar">
+                            <div id="progressBarFull"></div>
+                        </div>
+                    </div>
+                    <div class="hud-item">
+                        <p class="hud-prefix">Puntaje</p>
+                        <h1 class="hud-main-text" id="score">0</h1>
+                    </div>
+                </div>
+                <div id="questionContainer" class="hide">
+                <div id="question" class="text-center">
+
+                </div>
+                <div id="answer-buttons" class="btn-grid">
+
+                </div>
+                <button id="next-btn" class="btn-resolve color3 hide">Siguiente</button>
+                <button id="end-btn" class="btn-resolve color2 hide">Finalizar</button>
+            </div>
+            </div>
+        </div>
+
+        <!-- Final -->
+        <div id="end-container" class="hide">
+            <div id="end">
+                <h1 id="finalScore">0</h1>
+                <form class="end-form-container">
+                    <h2 id="end-text">Escribe tu nombre abajo para guardar tu puntaje!</h2>
+                    <input type="text" name="name" id="username" placeholder="Escribe tu nombre">
+                    <button class="btn color2 btn-width" id="saveScoreBtn" type="submit" onclick="saveHighScore(event)" disabled>Guardar</button>
+                </form>
+                <button id="backBtnEnd" class="btn color4 btn-width">Volver</button>
+            </div>
+        </div>
+    </div>
+
+<!-- scripts -->
+<script src="assets/js/script.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
