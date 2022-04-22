@@ -70,7 +70,16 @@
         <div id="generalContainer" class="hide">
             <div id="game">
                 <div id="hud">
-                    <div class="hud-item">
+
+                    <div id="timeContainer" class="hud-item hide">
+                        <div class="timer">
+                            <div class="time_left_txt hud-prefix">Tiempo:</div>
+                            <div class="timer_sec hud-main-text">120</div>
+                        </div>
+                        <div class="time_line"></div>
+                    </div>
+
+                    <div id="progressContainer" class="hud-item hide">
                         <p id="progressText" class="hud-prefix">Pregunta</p>
                         <div id="progressBar">
                             <div id="progressBarFull"></div>

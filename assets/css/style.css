@@ -258,7 +258,7 @@ body {
     height: 25%;
     border: 0.1em solid rgb(11, 223, 36);
     border-radius: 50px;
-    margin-top: 1em;
+    margin: 1em 0;
     overflow: hidden;
 }
 

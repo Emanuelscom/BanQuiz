@@ -28,6 +28,37 @@ const backBtnEnd          = document.getElementById('backBtnEnd')
 const mostRecentScore     = localStorage.getItem('mostRecentScore')
 const logo                = document.getElementById('logo')
 const highscoresList      = document.getElementById('highscoresList')
+const timeContainer       = document.getElementById('timeContainer')
+const progressContainer   = document.getElementById('progressContainer')
+const time_line           = document.getElementById('.time_line');
+const timeText            = document.querySelector('.timer .time_left_txt');
+const timeCount           = document.querySelector('.timer .timer_sec');
+
+
+
+let counterLine;
+
+//iniciar el contador
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount.textContent = time; //cambia el valor de timeCount con calor de time
+        time--;
+        if(time < 9){ //if timer is less than 9
+            let addZero = timeCount.textContent; 
+            timeCount.textContent = "0" + addZero; //add a 0 before time value
+        }
+        if(time < 0){ //si el tiempo es menor a 0
+            timeText.textContent = "Time Off";
+            finalize.classList.remove('hide')
+            body.classList.add('disabled')
+        }
+    }
+}
+
+
+
+
 
 let currentQuestionIndex
 let mixQuestions
@@ -83,30 +114,31 @@ Swal.fire({
 })
 })
 
-//un jugador
+//modo clasico a instrucciones
 function selectModeOne() {
     playerSelection.classList.add('hide')
     modeSelection1.classList.remove('hide')
     localStorage.setItem('playerCount', parseInt(localStorage.getItem('playerCount'))+ 1)
 }
 
-//dos jugadores
+//modo contrarreloj a instrucciones
 function selectModeTwo() {
     playerSelection.classList.add('hide')
     modeSelection2.classList.remove('hide')
 }
 
-//modo de juego clasico 10 preguntas
+//instrucciones clasico
 function selectClassic() {
     modeSelection1.classList.add('hide')
     generalContainer.classList.remove('hide')
     mixQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 1
     questionContainer.classList.remove('hide')
+    progressContainer.classList.remove('hide')
     setNextQuestion()
 }
 
-//modo de juego por tiempo
+//instrucciones timetrial
 function selectTrimeTrial() {
     modeSelection2.classList.add('hide')
     generalContainer.classList.remove('hide')
@@ -114,6 +146,8 @@ function selectTrimeTrial() {
     currentQuestionIndex = 1
     questionContainer.classList.remove('hide')
     setNextQuestion()
+    timeContainer.classList.remove('hide')
+    startTimer(120)
 }
 
 //proxima pregunta
@@ -151,7 +185,6 @@ function resetState() {
 }
 
 //seleccionar respuestas 
-//HACER UN IF FUERA DEL IF HECHO QUE DIGA QUE MODO DE JUEGO ES (if clasico 10 preguntas, else sin limite de preguntas/tiempo?)
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -226,6 +259,7 @@ function backMenu2() {
 function backMenuEnd() {
     endContainer.classList.add('hide')
     playerSelection.classList.remove('hide')
+    document.location.reload()                    //VER COMO RESETEAR SIN HACER UN RELOAD DE PAGINA
 }
 
 //si no se escribe el username no se puede guardar el score
@@ -261,7 +295,7 @@ highscoresList.innerHTML = highScores
 })
 .join('');
 
-//fetch
+//fetch de bitcoin
 const usdAmount = document.getElementById('usd-amount')
 
 fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
