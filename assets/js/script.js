@@ -30,36 +30,11 @@ const logo                = document.getElementById('logo')
 const highscoresList      = document.getElementById('highscoresList')
 const timeContainer       = document.getElementById('timeContainer')
 const progressContainer   = document.getElementById('progressContainer')
-const time_line           = document.getElementById('.time_line');
-const timeText            = document.querySelector('.timer .time_left_txt');
-const timeCount           = document.querySelector('.timer .timer_sec');
-
-
+const time_line           = document.getElementById('.time_line')
+const timeText            = document.querySelector('.timer .time_left_txt')
+const timeCount           = document.querySelector('.timer .timer_sec')
 
 let counterLine;
-
-//iniciar el contador
-function startTimer(time){
-    counter = setInterval(timer, 1000);
-    function timer(){
-        timeCount.textContent = time; //cambia el valor de timeCount con calor de time
-        time--;
-        if(time < 9){ //if timer is less than 9
-            let addZero = timeCount.textContent; 
-            timeCount.textContent = "0" + addZero; //add a 0 before time value
-        }
-        if(time < 0){ //si el tiempo es menor a 0
-            timeText.textContent = "Time Off";
-            finalize.classList.remove('hide')
-            body.classList.add('disabled')
-        }
-    }
-}
-
-
-
-
-
 let currentQuestionIndex
 let mixQuestions
 const MAX_QUESTIONS = 10
@@ -113,6 +88,25 @@ Swal.fire({
     }
 })
 })
+
+//iniciar el contador
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount.textContent = time
+        time--
+        if(time < 9){ 
+            let addZero = timeCount.textContent
+            timeCount.textContent = "0" + addZero
+        }
+        if(time < 0){
+            timeText.textContent = "Time Off";
+            clearInterval(counter)
+            finalize.classList.remove('hide')
+            answerButton.classList.add('disabled')
+        }
+    }
+}
 
 //modo clasico a instrucciones
 function selectModeOne() {
@@ -258,8 +252,8 @@ function backMenu2() {
 //volver al menu si no guarda el score
 function backMenuEnd() {
     endContainer.classList.add('hide')
-    playerSelection.classList.remove('hide')
-    document.location.reload()                    //VER COMO RESETEAR SIN HACER UN RELOAD DE PAGINA
+    playerSelection.classList.remove('hide')                
+    window.location.assign('/')
 }
 
 //si no se escribe el username no se puede guardar el score
