@@ -39,6 +39,8 @@ let currentQuestionIndex
 let mixQuestions
 const MAX_QUESTIONS = 10
 
+let classicActive = false
+
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
 finalScore.innerText = mostRecentScore
 
@@ -127,6 +129,7 @@ function selectClassic() {
     generalContainer.classList.remove('hide')
     mixQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 1
+    classicActive = true
     questionContainer.classList.remove('hide')
     progressContainer.classList.remove('hide')
     setNextQuestion()
@@ -186,10 +189,18 @@ function selectAnswer(e) {
     Array.from(answerButton.children).forEach(button => {
         setStatusClass(button, button.dataset.correct, 0)
     })
+    if (classicActive == true){
     if (mixQuestions.length > currentQuestionIndex + 1 && currentQuestionIndex + 1 < 11) {
         nextButton.classList.remove('hide')
     }else {
         finalize.classList.remove('hide')
+    }
+}else {
+    if (mixQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    }else {
+        finalize.classList.remove('hide')
+    }
 }
 }
 

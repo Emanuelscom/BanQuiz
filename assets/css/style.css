@@ -16,12 +16,6 @@ body {
     background: #303030;
 }
 
-.bitContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .logo {
     width: 13em;
 }
@@ -313,6 +307,7 @@ input {
     padding: 0.5em 0.5em 0 0.5em;
     width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -398,10 +393,6 @@ input {
         font-size: 1.5em;
     }
 
-    #progressBar {
-        width: 9em;
-    }
-
     .btn-width-quest {
         width: 10em;
     }
@@ -470,5 +461,13 @@ input {
     #username {
         width: 80%;
         font-size: 1em;
+    }
+
+    #progressBar {
+        height: 0.8em;
+    }
+
+    .bitContainer {
+        font-size: 1.2em;
     }
 }
