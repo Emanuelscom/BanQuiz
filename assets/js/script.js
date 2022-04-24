@@ -534,24 +534,3 @@ const questions = [
         ]
     }
 ]
-
-
-/*
-//info jugador
-class Player {
-    constructor(id, playerName, score, lives){
-        this.id = id;
-        this.playerName = playerName;
-        this.score = score;
-        this.lives = lives;
-    }
-}
-*/
-/* 
-let playerNamePrompt = prompt('Ingrese el nombre del jugador 1');
-
-const playerOne = new Player(1,playerNamePrompt,0,3);
-console.log(playerOne);
-
-let nameDisplay = document.getElementById('playerName').innerHTML = 'Jugador 1: ' + playerNamePrompt;
-*/
